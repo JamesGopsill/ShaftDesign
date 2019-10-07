@@ -1,0 +1,198 @@
+
+\section{Macaulay Notation}
+
+Macaulay Notation\footnote{N.b. This should all be familiar to you from your 1st Year Solid Mechanics.} is a method used for the structural analysis of Euler-Bernoulli beams and describes the beam forces, moments and deflection. The method is particularly useful for discontinuous and/or discrete loading scenarios as well as loadings that are uniformly distributed loads (u.d.l.) and/or uniformly varying loads (u.v.l.) over the span of a beam.
+
+The\marginnote{Method} method starts with the Euler-Bernoulli beam theory and the relation between the deflection $w$ and bending moment $M$.
+
+\begin{equation}
+  \pm EI\frac{\text{d}^2 w}{\text{d}x^2} = M
+\end{equation}
+
+\noindent Where $E$ is the elastic modulus and $I$ is the second moment of area.
+
+In terms of Macaulay Notation, $M$ is expressed in the form:
+
+\begin{equation}
+  M = M_1(x) + P_1\langle x-a_1\rangle^{b_1} + P_2\langle x-a_2\rangle^{b_2} + P_3\langle x-a_3\rangle^{b_3} + \ldots
+\end{equation}
+
+\noindent Where $M_1$ is the moment at the start of $x$ and $P_i\langle x-a_i\rangle^{b_i}$ representing elements along the beam that contribute to the moment. These contribute to the scenario when $x$ becomes greater than $a_i$:
+
+\begin{equation}
+  \langle x - a_i\rangle = 
+  \begin{cases} 
+    0 & \mathrm{if}~ x < a_i \\ 
+    x - a_i & \mathrm{if}~ x > a_i 
+  \end{cases}
+\end{equation}
+
+\noindent $b_i$ is determined by the type of loading that is being applied. 
+
+For\marginnote{Shear Force} the shaft design exercise, you will be taking the shear forces and integrating them to get your bending moments for the two axes. For example, the Macaulay Notation for the Free Body Diagrams in \cref{fig-fbd} are as follows:
+\begin{equation}
+  S_v = R_{v1}\langle x-x_1\rangle^0 + F_{1}\langle x-x_2\rangle^0  + F_{2}\langle x-x_3\rangle^0 + R_{v2}\langle x-x_4\rangle^0
+\end{equation}
+\begin{equation}
+  S_h = F_{3}\langle x-x_0\rangle^0 + R_{h1}\langle x-x_2\rangle^0 + R_{h2}\langle x-x_4\rangle^0
+\end{equation}
+
+From\marginnote{Shear Force Diagram} these equations, the shear force diagrams for the two axes can be generated (\cref{fig-sfd}).
+
+\begin{figure*}[th!]
+  \centering
+  \begin{tabular}{c c}
+    \subfloat[Vertical Shear]{
+      \begin{tikzpicture}
+        \begin{axis}[
+          width=0.4\textwidth,
+          xlabel = Shaft Length,
+          ylabel = Shear Force,
+          use units,
+          x unit=\si{\metre},
+          y unit=\si{\kilo\newton},
+          legend style={at={(0.03,0.03)},anchor=south west, font=\footnotesize},
+          legend cell align=left
+          ]
+
+        \addplot[color=black, dotted] coordinates {
+          (0,0)
+          (0.6,0)
+        };
+
+        \addplot[color=black] coordinates {
+          (0,0)
+          (0.2,0)
+          (0.2, 14.375)
+          (0.3, 14.375)
+          (0.3, -0.625)
+          (0.55, -0.625)
+          (0.55, -25.625)
+          (0.6, -25.625)
+          (0.6, 0)
+        };
+
+
+        \legend{Zero Line, Vertical}
+
+        \end{axis}
+      \end{tikzpicture}
+    }
+    & 
+    \subfloat[Horizontal Shear]{
+      \begin{tikzpicture}
+        \begin{axis}[
+          width=0.4\textwidth,
+          xlabel = Shaft Length,
+          ylabel = Shear Force,
+          use units,
+          x unit=\si{\metre},
+          y unit=\si{\kilo\newton},
+          legend style={at={(0.97,0.03)},anchor=south east, font=\footnotesize},
+          legend cell align=left
+          ]
+
+        \addplot[color=black, dotted] coordinates {
+          (0,0)
+          (0.6,0)
+        };
+
+        \addplot[color=black] coordinates {
+          (0,0)
+          (0,-10)
+          (0.2,-10)
+          (0.2,5)
+          (0.6,5)
+          (0.6,0)
+        };
+
+        \legend{Zero Line, Horizontal}
+
+        \end{axis}
+      \end{tikzpicture}
+    }
+  \end{tabular}
+  \vspace{1em}
+  \caption{Shear force diagrams}\label{fig-sfd}
+\end{figure*}
+
+
+Having\marginnote{Bending Moment}  described the shear forces in Macaulay Notation, it is then the case of integrating and determining the constant of integration to arrive at an equation that describes the bending moment at any point through the beam.
+\begin{equation}
+  M_v = \int S_v = R_{v1}\langle x-x_1\rangle^1 + F_{1}\langle x-x_2\rangle^1  + F_{2}\langle x-x_3\rangle^1 + R_{v2}\langle x-x_4\rangle^1
+\end{equation}
+\begin{equation}
+  M_h = \int S_h = F_{3}\langle x-x_0\rangle^1 + R_{h1}\langle x-x_2\rangle^1 + R_{h2}\langle x-x_4\rangle^1
+\end{equation}
+
+Using\marginnote{Bending Moment Diagram} these equations, one can obtain the bending moment diagrams for the loaded beam (\cref{fig-bmd}).
+
+\begin{figure*}[th!]
+  \centering
+  \begin{tabular}{c c}
+    \subfloat[Vertical Bending]{
+      \begin{tikzpicture}
+        \begin{axis}[
+          width=0.4\textwidth,
+          xlabel = Shaft Length (\si{\metre}),
+          ylabel = Bending Moment (\si{\kilo\newton\metre}),
+          use units,
+          x unit=\si{\metre},
+          y unit=\si{\kilo\newton},
+          legend style={at={(0.03,0.97)},anchor=north west, font=\footnotesize},
+          legend cell align=left
+          ]
+
+        \addplot[color=black, dotted] coordinates {
+          (0,0)
+          (0.6,0)
+        };
+
+        \addplot[color=black] coordinates {
+          (0,0)
+          (0.2,0)
+          (0.3, 1.44)
+          (0.55, 1.28)
+          (0.6, 0)
+        };
+
+
+        \legend{Zero Line, Vertical}
+
+        \end{axis}
+      \end{tikzpicture}
+    }
+    & 
+    \subfloat[Horizontal Bending]{
+      \begin{tikzpicture}
+        \begin{axis}[
+          width=0.4\textwidth,
+          xlabel = Shaft Length,
+          ylabel = Bending Moment,
+          use units,
+          x unit=\si{\metre},
+          y unit=\si{\kilo\newton},
+          legend style={at={(0.97,0.03)},anchor=south east, font=\footnotesize},
+          legend cell align=left
+          ]
+
+        \addplot[color=black, dotted] coordinates {
+          (0,0)
+          (0.6,0)
+        };
+
+        \addplot[color=black] coordinates {
+          (0,0)
+          (0.2,-2.0)
+          (0.6,0)
+        };
+
+        \legend{Zero Line, Horizontal}
+
+        \end{axis}
+      \end{tikzpicture}
+    }
+  \end{tabular}
+  \vspace{1em}
+  \caption{Bending Moment Diagrams}\label{fig-bmd}
+\end{figure*}
