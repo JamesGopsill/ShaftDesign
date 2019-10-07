@@ -12,26 +12,13 @@
 \usepackage{microtype}
 
 
-% header and footer
-\usepackage{lastpage}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-% Left edge on a twoside page
-\fancyhead[LE,RO]{}
-\fancyhead[RE,LO]{}
-\fancyhead[CE,CO]{}
-\fancyfoot[LE,RO]{\thepage{}}
-\fancyfoot[RE,LO]{}
-\fancyfoot[CE,CO]{}
-
 \usepackage{tocloft}
 %\renewcommand{\cftchapfont}{\sffamily}
 \renewcommand{\cftsecfont}{\sffamily}
 \renewcommand{\cftsubsecfont}{\sffamily}
 
 \usepackage{sectsty}
-\sectionfont{\RaggedRight}
+\sectionfont{\cleardoublepage{}\RaggedRight}
 \subsectionfont{\RaggedRight}
 \subsubsectionfont{\RaggedRight}
 
