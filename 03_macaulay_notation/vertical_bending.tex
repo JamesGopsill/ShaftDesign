@@ -1,0 +1,38 @@
+\documentclass[margin=0.1cm]{standalone}
+
+\usepackage{stix2}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepgfplotslibrary{units}
+\usepackage{siunitx}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel = Shaft Length (\si{\metre}),
+        ylabel = Bending Moment (\si{\kilo\newton\metre}),
+        use units,
+        x unit=\si{\metre},
+        y unit=\si{\kilo\newton},
+        legend style={at={(0.03,0.97)},anchor=north west, font=\footnotesize},
+        legend cell align=left
+    ]
+    
+    \addplot[color=black, dotted] coordinates {
+        (0,0)
+        (0.6,0)
+    };
+    
+    \addplot[color=black] coordinates {
+        (0,0)
+        (0.2,0)
+        (0.3, 1.44)
+        (0.55, 1.28)
+        (0.6, 0)
+    };
+    
+    \legend{Zero Line, Vertical}
+    
+    \end{axis}
+\end{tikzpicture}
+\end{document}

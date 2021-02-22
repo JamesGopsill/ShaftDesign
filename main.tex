@@ -1,52 +1,74 @@
-\documentclass[a4paper, twoside, titlepage]{tufte-handout}
+\documentclass[]{course-notes}
 
-\input{pre-amble.tex}
 
-\title{Detailed Sub-Assembly Design}
-\author{Dr Gopsill, Dr Lupton, Dr Owen \& Prof. Mullineux}
-\date{}
+\title{Detailed \\ Sub--Assembly\\ Design}
+\author[Gopsill et al.]{\normalsize James Gopsill, Rick Lupton, Geraint Owen \& Glen Mullineux}
+
 
 \begin{document}
 
-\input{frontmatter.tex}
+\maketitle
 
-\graphicspath{{Introduction/}}
-\input{Introduction/Introduction.tex}
+\begin{abstract}
+    This document contains the course notes for the Detailed Sub-Assembly (shaft) design exercise. 
+    In this exercise, we go through the full detailed analysis of a component and the specification of the associated components that will be attached to the component. 
+\end{abstract}
 
-\graphicspath{{FreeBodyDiagrams/}}
-\input{FreeBodyDiagrams/FreeBodyDiagrams.tex}
+\setcounter{tocdepth}{2}
+\tableofcontents
+\listoffigures
+\listoftables
 
-\graphicspath{{MacaulayNotation/}}
-\input{MacaulayNotation/MacaulayNotation.tex}
+\section*{List of Acronyms}
+\begin{acronym}[TDMA]
+    \acro{PDS}{Product Design Specification}
+    \acro{SYS}{Shear Yield Strength}
+    \acro{TYS}{Tensile Yield Strength}
+    \acro{USS}{Ultimate Shear Strength}
+    \acro{UTS}{Ultimate Tensile Strength}
+    \acro{YS}{Yield Strength}
+\end{acronym}
 
-\graphicspath{{FailureModes/}}
-\input{FailureModes/FailureModes.tex}
+\clearpage
+\input{01_introduction/section.tex}
 
-\graphicspath{{DesignFactor/}}
-\input{DesignFactor/DesignFactor.tex}
+\clearpage
+\input{02_free_body_diagrams/section.tex}
 
-\graphicspath{{ComparingStressAndAllowableStress/}}
-\input{ComparingStressAndAllowableStress/ComparingStressAndAllowableStress.tex}
+\clearpage
+\input{03_macaulay_notation/section.tex}
 
-\graphicspath{{TransmissionSelection/}}
-\input{TransmissionSelection/TransmissionSelection.tex}
+\clearpage
+\input{04_failure_modes/section.tex}
 
-\graphicspath{{BearingSelection/}}
-\input{BearingSelection/BearingSelection.tex}
+\clearpage
+\input{05_design_factor/section.tex}
 
-\graphicspath{{FittingsAndFixtures/}}
-\input{FittingsAndFixtures/FittingsAndFixtures.tex}
+\clearpage
+\input{06_comparing_stress_and_allowable_stress/section.tex}
 
-\raggedright
+\clearpage
+\input{07_transmission_selection/section.tex}
+
+\clearpage
+\input{08_bearing_selection/section}
+
+\clearpage
+\input{09_fixtures_and_fittings/section}
+
+\clearpage
+
 \bibliography{citations}
 \bibliographystyle{plainnat}
 
 \appendix
 
-\graphicspath{{SafetyFactor/}}
-\input{SafetyFactor/SafetyFactor.tex}
+\clearpage
+\input{A1_safety_factor/section}
 
-\graphicspath{{PolygonalAction/}}
-\input{PolygonalAction/PolygonalAction.tex}
+\clearpage
+\input{A2_polygonal_action/section}
+
+
 
 \end{document}

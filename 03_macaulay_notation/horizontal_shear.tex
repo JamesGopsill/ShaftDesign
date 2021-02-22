@@ -1,0 +1,39 @@
+\documentclass[margin=0.1cm]{standalone}
+
+\usepackage{stix2}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepgfplotslibrary{units}
+\usepackage{siunitx}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel = Shaft Length,
+        ylabel = Shear Force,
+        use units,
+        x unit=\si{\metre},
+        y unit=\si{\kilo\newton},
+        legend style={at={(0.97,0.03)},anchor=south east, font=\footnotesize},
+        legend cell align=left
+    ]
+    
+    \addplot[color=black, dotted] coordinates {
+      (0,0)
+      (0.6,0)
+    };
+    
+    \addplot[color=black] coordinates {
+      (0,0)
+      (0,-10)
+      (0.2,-10)
+      (0.2,5)
+      (0.6,5)
+      (0.6,0)
+    };
+    
+    \legend{Zero Line, Horizontal}
+    
+    \end{axis}
+\end{tikzpicture}
+\end{document}

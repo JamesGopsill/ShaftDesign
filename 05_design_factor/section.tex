@@ -5,42 +5,42 @@ The Design Factor (\(N_u\)/\(N_y\)) is used to obtain an ``allowable'' or ``work
 When considering the \ac{UTS}, the Design Factor (\(N_u\)) is:
 
 \begin{equation}
-  N_u = a.b.c.d.k 
+    N_u = a.b.c.d.k 
 \end{equation}
 
 And the allowable stress is calculated by:
 
 \begin{equation}
-  \text{Allowable Stress} = \frac{S_\text{UTS}}{N_u}
+    \text{Allowable Stress} = \frac{S_\text{UTS}}{N_u}
 \end{equation}
 
 When considering the \acf{YS}, the Design Factor (\(N_y\)) is:
 
 \begin{equation}
-  N_y = b.c.d.k
+    N_y = b.c.d.k
 \end{equation}
 
 And the allowable stress is calculated by:
 
 \begin{equation}
-  \text{Allowable Stress} = \frac{S_\text{y}}{N_y} 
+    \text{Allowable Stress} = \frac{S_\text{y}}{N_y} 
 \end{equation}
 
 The five factors \(a\), \(b\), \(c\), \(d\) and \(k\) ensure that we consider the following in our calculations: 
 
 \begin{description}
-  \item[a] ratio between \ac{UTS} and \ac{YS} for your material
-  \item[b] fatigue factor
-  \item[c] shock factor
-  \item[d] factor of safety (Pugsley's Method)
-  \item[k] stress concentration factor
+    \item[a] ratio between \ac{UTS} and \ac{YS} for your material
+    \item[b] fatigue factor
+    \item[c] shock factor
+    \item[d] factor of safety (Pugsley's Method)
+    \item[k] stress concentration factor
 \end{description}
 
 The\marginnote{a: UTS / YS ratio} ratio of the ultimate strength of the material to its yield strength (sometimes the elastic limit). If the yield strength is not known then this factor is used to estimate what it would be:
 
 \begin{description}
-  \item[\(a=2\)] for ductile material
-  \item[\(a=1.5\)] for heat treated and tempered alloys
+    \item[\(a=2\)] for ductile material
+    \item[\(a=1.5\)] for heat treated and tempered alloys
 \end{description}
 
 For cast iron, which has no real elastic limit, failure occurs suddenly at the ultimate tensile strength, and there is no sense in applying this factor at all.
@@ -56,15 +56,15 @@ The\marginnote{b: Fatigue Factor} fatigue factor can be calculated using the Goo
 %\noindent Where $\sigma_\text{a}$ is the alternating stress, $\sigma_\text{m}$ is the mean stress, $\sigma_\text{fat}$ is the fatigue limit for completely reversed loading, and $\sigma_\text{ts}$ is the ultimate tensile strength of the material. But in general and for the purpose of this exercise, you should consider two scenarios:
 
 \begin{description}
-  \item[\(b=1\)] for a dead load, or a single-plane load varying between 0 and a maximum.
-  \item[\(b=1.5\)] for a load that varies between tension and compression
+    \item[\(b=1\)] for a dead load, or a single-plane load varying between 0 and a maximum.
+    \item[\(b=1.5\)] for a load that varies between tension and compression
 \end{description}
 
 The\marginnote{c: Shock Factor} dynamic forces imposed by shock loading can be many times the static loads that a shaft is designed towards. If there is potential for a shock load, a safety factor should be included to account. Again, you should consider two cases.
 
 \begin{description}
-  \item[\(c=1\)] when loads are gradually applied
-  \item[\(c=2\)] when loads are suddenly applied
+    \item[\(c=1\)] when loads are gradually applied
+    \item[\(c=2\)] when loads are suddenly applied
 \end{description}
 
 To investigate the shock loads in detail, analysis of the elongation and energy absorption capability of material and geometry would be required.
@@ -76,15 +76,15 @@ If all the other factors (a,b,c,k) are properly computer and accounted for, and 
 The factor d provide for these conditions, The value taken for d will be dependent on the judgement of the designer, but will include the consideration of the following:
 
 \begin{enumerate}
-  \item Degree of accuracy of stress computations \emph{(I.e.\ the reliance that can be placed on the estimation of and the assumptions made in calculating the stresses.)}
-  \item Degree of reliability of the material \emph{I.e.\ the conformance to specification of the material chosen and the property chosen to represent the behaviour of the material under the specified loading.}
-  \item Degree of uncertainty of loading \emph{I.e.\ How reliable the load specification is both in terms of magnitude, point of application, distribution of loading and inclusion of other loads such as handling, transportation etc.}
-  \item Degree of reliability of specification \emph{I.e.\ How reliable the ``specification'' is in terms of defining the function etc.}
-  \item Initial stresses \emph{I.e.\ Presence of residual stresses associated with manufacture, forming or assembly etc.}
-  \item Reliability of manufacture \emph{I.e.\ Variability of heat treatments, surface finishes, dimensional tolerances etc.}
-  \item Indeterminate or unexpected loads \emph{I.e.\ Errors in handling, changes in loading due to wear of critical parts etc.}
-  \item Operating environment \emph{I.e.\ Ambient temperature (high or low), corrosion etc.}
-  \item Consequences of failure \emph{I.e.\ Danger to life, ease of repair, cost of failure etc.}
+    \item Degree of accuracy of stress computations \emph{(I.e.\ the reliance that can be placed on the estimation of and the assumptions made in calculating the stresses.)}
+    \item Degree of reliability of the material \emph{I.e.\ the conformance to specification of the material chosen and the property chosen to represent the behaviour of the material under the specified loading.}
+    \item Degree of uncertainty of loading \emph{I.e.\ How reliable the load specification is both in terms of magnitude, point of application, distribution of loading and inclusion of other loads such as handling, transportation etc.}
+    \item Degree of reliability of specification \emph{I.e.\ How reliable the ``specification'' is in terms of defining the function etc.}
+    \item Initial stresses \emph{I.e.\ Presence of residual stresses associated with manufacture, forming or assembly etc.}
+    \item Reliability of manufacture \emph{I.e.\ Variability of heat treatments, surface finishes, dimensional tolerances etc.}
+    \item Indeterminate or unexpected loads \emph{I.e.\ Errors in handling, changes in loading due to wear of critical parts etc.}
+    \item Operating environment \emph{I.e.\ Ambient temperature (high or low), corrosion etc.}
+    \item Consequences of failure \emph{I.e.\ Danger to life, ease of repair, cost of failure etc.}
 \end{enumerate}
 
 A safety factor may be defined by a Code of Practice, Company Policy, experience of designer. Codes of Practice specifying Safety Factors are often associated with specialised industries for products such as boilers, buildings etc. Companies dealing with specialised products frequently have their own specified factors of safety. Caution should be exercised where the design differs from the ``norm''. Experienced designers will often have developed their own safety factors for application to their design speciality.
@@ -93,20 +93,20 @@ A safety factor may be defined by a Code of Practice, Company Policy, experience
 In\marginnote{Calculating d using Pugsley's Method} 1966, Pugsley~\cite{howard1967} devised a general methodology for determining the safety factor, which takes the manufacturing, operational characteristics, and seriousness of failure into account\footnote{For more information on Safety Factors please see \cref{appendix-safety}}.
 
 \begin{equation}
-  d = X.Y
+    d = X.Y
 \end{equation}
 
 \begin{description}
-  \item[\(X\)] is chosen based on three factors related to manufacture and operation.
-  \item[\(Y\)] is chosen based on seriousness of failure related to personnel and to economic impact.
+    \item[\(X\)] is chosen based on three factors related to manufacture and operation.
+    \item[\(Y\)] is chosen based on seriousness of failure related to personnel and to economic impact.
 \end{description}
 
 To calculate the value of \(X\), one has to determine the quality of the component in three areas:
 
 \begin{description}
-  \item[A] Materials, workshop, inspection and manufacture
-  \item[B] Loading and control over it
-  \item[C] Quality of assessment of strength, analysis methods and accuracy
+    \item[A] Materials, workshop, inspection and manufacture
+    \item[B] Loading and control over it
+    \item[C] Quality of assessment of strength, analysis methods and accuracy
 \end{description}
 
 Each are scored as either Very Good (VG), Good (G), Fair (F) or Poor (P). Using these scores, the value for \(X\) can be calculated using \cref{tbl-pugsley-x}.
@@ -169,30 +169,34 @@ These are scores Not Serious, Serious and Very Serious. Table~\ref{tbl-pugsley-y
 This\marginnote{k: Stress Concentration Factor} allows for the fact that there may be sudden changes in the geometry of a part. An example is fillets that provide places where localised stresses are higher than those determined by simple stress analysis. A wealth of empirical and analytical studies have been performed to determine the stress concentration factors for features, such as fillets and circlip grooves (\cref{fig-stress-fillet,fig-stress-circlip}, respectively). 
 
 \begin{figure*}[t!]
-  \center{}
-  \begin{tabular}{c c}
-  \subfloat[Shaft under bending]{
-    \includegraphics[width=0.45\textwidth]{figs/fillet-bending.png}
-  } & 
-  \subfloat[Shaft under torsion]{
-    \includegraphics[width=0.45\textwidth]{figs/fillet-torsion.png}
-  } \\
-  \end{tabular}
-  \vspace{1em}
-  \caption{Fillet stress concentration factors for shafts}\label{fig-stress-fillet}
+  
+    \hfill
+    \subfloat[Shaft under bending]{
+        \includegraphics[width=0.45\textwidth]{05_design_factor/fillet-bending.png}
+    }
+    \hfill
+    \subfloat[Shaft under torsion]{
+        \includegraphics[width=0.45\textwidth]{05_design_factor/fillet-torsion.png}
+    }
+    \hfill
+    
+    \vspace{1em}
+    \caption{Fillet stress concentration factors for shafts}\label{fig-stress-fillet}
 \end{figure*}
 
 \begin{figure*}[t]
-  \center{}
-  \begin{tabular}{c c}
-  \subfloat[Shaft under bending]{
-    \includegraphics[width=0.45\textwidth]{figs/circlip-groove-bending.png}
-  } & 
-  \subfloat[Shaft under torsion]{
-    \includegraphics[width=0.45\textwidth]{figs/circlip-groove-torsion.png}
-  } \\
-  \end{tabular}
-  \vspace{1em}
-  \caption{Circlip stress concentration factors for shafts}\label{fig-stress-circlip}
+    
+    \hfill
+    \subfloat[Shaft under bending]{
+        \includegraphics[width=0.45\textwidth]{05_design_factor/circlip-groove-bending.png}
+    }
+    \hfill
+    \subfloat[Shaft under torsion]{
+        \includegraphics[width=0.45\textwidth]{05_design_factor/circlip-groove-torsion.png}
+    }
+    \hfill
+    
+    \vspace{1em}
+    \caption{Circlip stress concentration factors for shafts}\label{fig-stress-circlip}
 \end{figure*}
 
