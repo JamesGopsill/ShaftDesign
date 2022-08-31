@@ -1,0 +1,78 @@
+\documentclass[margin=0.1cm]{standalone}
+
+%\usepackage{stix2}
+\usepackage[]{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{arevmath}
+\usepackage[italic]{mathastext}
+\usepackage[T1]{fontenc}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{siunitx}
+
+\usepackage{booktabs}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel = $\frac{r}{d}$,
+        ylabel = $K_t$,
+        ymin={1},
+        ymax={3},
+        xmin={0},
+        xmax={0.3},
+        x tick label style={
+            /pgf/number format/.cd,
+                fixed,
+                %fixed zerofill,
+                precision=2,
+            /tikz/.cd
+        },
+        domain={0.005:0.3},
+        samples={100}
+    ]
+    
+    \addplot[smooth] {0.903*x^-0.127} node[pos=0.7, fill=white] {\scriptsize 1.09};
+    \addplot[smooth] {0.833*x^-0.216} node[pos=0.7, fill=white] {\scriptsize 1.20};
+    \addplot[smooth] {0.863*x^-0.239} node[pos=0.7, fill=white] {\scriptsize 2};
+
+    
+    \end{axis}
+    
+    %% Drawing (going clockwise from top left)
+    
+    \draw[] (4,5.4) -- (5,5.4);
+    \draw (5,5.4) arc [start angle=180, end angle=270, x radius=0.2cm, y radius=0.2cm] node[pos=0.5, anchor=south west] {\small $r$};
+    \draw[] (5.2,5.2) -- (6.2, 5.2);
+    \draw[] (6.2,5.2) -- (6.2, 4.8);
+    \draw[] (6.2,4.8) -- (5.2, 4.8);
+    \draw (5,4.6) arc [start angle=180, end angle=90, x radius=0.2cm, y radius=0.2cm];
+    \draw[] (5.0,4.6) -- (4.0, 4.6);
+    \draw[] (4.0, 4.6) -- (4, 5.4);
+    
+    \draw[] (5.0, 4.6) -- (5.0, 5.4);
+    
+    \draw[<->] (4.5, 4.7) -- (4.5, 5.3) node[pos=0.5, anchor=west] {\small $D$};
+    
+    \draw[<->] (5.6, 4.9) -- (5.6, 5.1) node[pos=0.5, anchor=west] {\small $d$};
+
+    \node[] at (5, 4) (maths) {\small$\tau_\text{nom}=\frac{Tc}{J}=\frac{16T}{\pi{}d^3}$};
+    
+    %% Table %%
+    
+    \node[anchor=north west, text width=4cm] at (7, 5.7) (table) {
+        Approximate formula \\[0.2em]
+        $K_t\approx B\left(\frac{r}{d}\right)^a$, where:\\[0.2em]
+        \begin{tabular}{rrr}
+            \toprule
+            $\frac{D}{d}$ & $B$ & $a$ \\
+            \midrule
+            2.00 & 0.863 & -0.239 \\
+            1.20 & 0.833 & -0.216 \\
+            1.09 & 0.903 & -0.127 \\
+            \bottomrule
+        \end{tabular}
+    };
+\end{tikzpicture}
+\end{document}

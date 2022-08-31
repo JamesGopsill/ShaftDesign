@@ -21,7 +21,7 @@ The following selection of a chain drive uses Renold's Chain Guide\footnote{Ackn
 
 An\marginnote{Centre Distance}  incorrect centre distance leads to a higher wear rate and slack chain, which introduces further inefficiencies into the system. % Centre distances that are smaller than nominal can be attained through the use of a chain tensioner.
 
-When\marginnote{polygonal action} the driving sprocket of a chain drive runs at constant speed, the speed of the chain itself is not constant but is subject to periodic fluctuations. This fluctuation, which is caused by the fact that the chain when wrapped on a sprocket forms a polygon rather than a circle, is known as polygonal action~\cite{mahalingam1958}.
+When\marginnote{Polygonal Action} the driving sprocket of a chain drive runs at constant speed, the speed of the chain itself is not constant but is subject to periodic fluctuations. This fluctuation, which is caused by the fact that the chain when wrapped on a sprocket forms a polygon rather than a circle, is known as polygonal action \mycite{mahalingam1958}.
 
 One effect of polygonal action is to produce a periodic variation in the velocity ratio of the drive, and if the frequency of this variation coincides with a resonant frequency of the system, large stresses may occur. At high chain speeds the effects of impact are very complex; each impact sets up a train of travelling waves which, after reflection at the sprockets, combine with the next train and so on.
 
@@ -30,7 +30,7 @@ One effect of polygonal action is to produce a periodic variation in the velocit
 \begin{marginfigure}
     \centering
     \includegraphics[width=\textwidth]{07_transmission_selection/polygonal-action.png}
-    \caption[Cyclic speed variation due to polygonal action]{Cyclic speed variation due to polygonal action~\citep[p.24]{renoldchain}}
+    \caption[Cyclic speed variation due to polygonal action]{Cyclic speed variation due to polygonal action \cite[][p.24]{renoldchain}}
     \label{fig-cyclic-speed-variation}
 \end{marginfigure}
 
@@ -40,7 +40,8 @@ It\marginnote{cranked link} is always best practice and desirable to have a chai
 \begin{marginfigure}
     \centering
     \includegraphics[width=\textwidth]{07_transmission_selection/cranked-link.png}
-    \caption[Cranked link]{Cranked link~\citep[p.11]{renoldchain}}
+    \caption[Cranked link]{Cranked link~\cite
+    [][p.11]{renoldchain}}
     \label{fig-cranked-link}
 \end{marginfigure}
 
@@ -66,7 +67,7 @@ With\marginnote{Selecting a Suitable Chain Pitch} the selection power determined
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.9\textwidth]{07_transmission_selection/chain-pitch.png}
-    \caption[Chain pitch selection chart]{Chain pitch selection chart~\citep[p.31]{renoldchain}}
+    \caption[Chain pitch selection chart]{Chain pitch selection chart \cite[][p.31]{renoldchain}}
     \label{fig-chain-pitch}
 \end{figure}
 
@@ -105,13 +106,13 @@ Once calculated, you then round to the nearest even integer and use this to calc
 
 Select a chain and sprocket to transmit \SI{2}{\kilo\watt} of power at \SI{20}{rpm}. A ratio of 1:2 is required, driven by an electric motor with moderate shocks expected from the load. Space is highly limited.
 
-Using\marginnote{determining \(f_1\) and \(f_2\)} Chart 2 on p.28 of the Renold catalogue, we identify that \(f_1=1.4\) for our context and we will also use the recommended number of teeth on the driving sprocket (19), which makes \(f_2=1\). Therefore, the selection power \(P_s\) becomes:
+Using\marginnote{Determining \(f_1\) and \(f_2\)} Chart 2 on p.28 of the Renold catalogue, we identify that \(f_1=1.4\) for our context and we will also use the recommended number of teeth on the driving sprocket (19), which makes \(f_2=1\). Therefore, the selection power \(P_s\) becomes:
 
 \begin{equation}
     P_s = f_1f_2P_t = 2\si{\kilo\watt}\times1.4\times1=2.8\si{\kilo\watt}
 \end{equation}
 
-Using\marginnote{chain pitch} \cref{fig-chain-pitch}, we can find the chain pitches that are suitable for our application. The potential pitches are:
+Using\marginnote{Chain Pitch} \cref{fig-chain-pitch}, we can find the chain pitches that are suitable for our application. The potential pitches are:
 
 \begin{itemize}
     \item \SI{38.10}{\milli\metre} simplex
@@ -119,7 +120,7 @@ Using\marginnote{chain pitch} \cref{fig-chain-pitch}, we can find the chain pitc
     \item \SI{25.40}{\milli\metre} triplex
 \end{itemize}
 
-For\marginnote{chain and sprocket selection} this example, we will select the triplex as our requirement is to have a compact solution. Now it is just a case of looking in the tables to find a sprocket set (Renolds, p.75) that will provide us with a ratio that provides us with the closest match in terms of our desired ratio, and a triplex chain (Renolds, p.25).
+For\marginnote{Chain and Sprocket Selection} this example, we will select the triplex as our requirement is to have a compact solution. Now it is just a case of looking in the tables to find a sprocket set (Renolds, p.75) that will provide us with a ratio that provides us with the closest match in terms of our desired ratio, and a triplex chain (Renolds, p.25).
 
 \begin{description}
     \item[Chain] 12B-3
@@ -127,7 +128,7 @@ For\marginnote{chain and sprocket selection} this example, we will select the tr
     \item[Driven Sprocket] 16B1/38T
 \end{description}
 
-Now\marginnote{chain links} we have the sprockets and chain selected, it is then a simple case of using their specifications to determine the number of links:
+Now\marginnote{Chain Links} we have the sprockets and chain selected, it is then a simple case of using their specifications to determine the number of links:
 
 \begin{equation}
     L = 
@@ -138,7 +139,7 @@ Now\marginnote{chain links} we have the sprockets and chain selected, it is then
 
 Rounding this up to the nearest even integer gives us \(L=90\).
 
-The\marginnote{centre distance} final calculation is to determine the centre distance:
+The\marginnote{Centre Distance} final calculation is to determine the centre distance:
 
 % https://www.sharelatex.com/learn/Aligning_equations_with_amsmath
 \begin{equation}

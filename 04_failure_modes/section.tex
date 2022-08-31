@@ -24,44 +24,28 @@ The Direct Stress is given by \cref{equ-direct-stress}.
     \label{equ-direct-stress}
 \end{equation}
 
-However, it is very rare for a shaft to fail through Direct Stress through the shafts cross-section. It is more likely that a shaft will fail due to the combined bending, hoop and torsional stresses acting on the outer surface of the shaft, which can be resolved using Mohr's Circle~\cite{clifford2012}.
+However, it is very rare for a shaft to fail through Direct Stress through the shafts cross-section. It is more likely that a shaft will fail due to the combined bending, hoop and torsional stresses acting on the outer surface of the shaft, which can be resolved using Mohr's Circle \mycite{clifford2012}.
 
 Taking\marginnote{Mohr's circle}  a 2D element on the outer surface of the shaft, the bending, hoop and torsional stresses can be related as shown in \cref{fig-mohrs-circle}. Where $\sigma_x$ is the bending stress, $\sigma_y$ is the hoop stress and $\tau_{xy}$ is the torsional stress.
 
 \begin{marginfigure}
-  \center{}
-  \begin{tikzpicture}[scale=2]
-
-    \draw[] (0,0) -- (0,1) -- (1,1) -- (1,0) -- (0,0);
-
-
-    \draw[->] (-0.1,0.5) -- (-0.4,0.5) node[left]{$\sigma_x$};
-    \draw[->] (1.1,0.5) -- (1.4,0.5) node[right]{$\sigma_x$};
-    \draw[->] (0.5,1.1) -- (0.5,1.4) node[above]{$\sigma_y$};
-    \draw[->] (0.5,-0.1) -- (0.5,-0.4) node[below]{$\sigma_y$};
-
-    \draw[{Straight Barb[left]}-] (0.0,-0.05) -- (1.0,-0.05) node[pos=0.0, below]{$\tau_{xy}$};
-    \draw[-{Straight Barb[left]}] (0.0,1.05) -- (1.0,1.05) node[pos=1.0, above]{$\tau_{xy}$};
-
-    \draw[{Straight Barb[right]}-] (-0.05,0.0) -- (-0.05,1.0) node[pos=0.0, left]{$\tau_{xy}$};
-    \draw[-{Straight Barb[right]}] (1.05,0.0) -- (1.05,1.0) node[pos=1.0, right]{$\tau_{xy}$};
-
-  \end{tikzpicture}
-  \caption{2D mohr's circle}
-  \label{fig-mohrs-circle}
+    \centering
+    \includestandalone[width=0.8\textwidth, mode=buildnew]{04_failure_modes/mohrs-circle}
+    \caption{2D mohr's circle}
+    \label{fig-mohrs-circle}
 \end{marginfigure}
 
 Bending\marginnote{Bending Stress $(\sigma_x)$}  stress is the Direct Stress in the direction of the axis of the shaft and is due to the bending moment. This can be calculated using Equation~\ref{equ-bending-stress}.
 
 \begin{equation}
-  \sigma_{x} = \frac{My}{I}
-  \label{equ-bending-stress}
+    \sigma_{x} = \frac{My}{I}
+    \label{equ-bending-stress}
 \end{equation}
 
-Where \(I\) is the Second Moment of Area:
+Where $I$ is the Second Moment of Area:
 
 \begin{equation}
-  I = \frac{\pi r^4}{4}
+    I = \frac{\pi r^4}{4}
 \end{equation}
 
 Hoop\marginnote{Hoop Stress \(\sigma_y\)} stress is the direct stress due to forces attempting to expand the shaft. This is only really the case when considering pressure vessels where the interior pressure of the gas or liquid is wanting to expand the vessel. In our cases, we can say that \(\sigma_y = 0\). 
@@ -69,81 +53,36 @@ Hoop\marginnote{Hoop Stress \(\sigma_y\)} stress is the direct stress due to for
 Torsional\marginnote{Torsional Stress \(\tau_{xy}\)} stress is the shear stress due to torsion (twisting) and can by calculated using Equation~(\ref{equ:torsional-stress}).
 
 \begin{equation}
-  \tau_{xy} = \frac{Tr}{J}
-  \label{equ:torsional-stress}
+    \tau_{xy} = \frac{Tr}{J}
+    \label{equ:torsional-stress}
 \end{equation}
 
 Where \(J\) is the Polar Moment of Area:
 
 \begin{equation}
-  J = \frac{\pi d^4}{32}
+    J = \frac{\pi d^4}{32}
 \end{equation}
 
 These stress depend upon the orientation of the element. If another element is taken, twisted through an angle \(\phi\), as shown in Figure, then the Direct Stresses are \(\sigma_x\) and \(\sigma_X\) and the shear stress is \(\tau_{xy}\) = \(\tau_{XY}\). And these are normally different from the first set of stresses in \cref{fig-rotated-mohrs-circle}.
 
 \begin{marginfigure}
-  \center{}
-  \begin{tikzpicture}[scale=2]
-
-    \draw[rotate=45] (0,0) -- (0,1) -- (1,1) -- (1,0) -- (0,0);
-
-
-    \draw[->, rotate=45] (-0.1,0.5) -- (-0.4,0.5) node[left]{$\sigma_X$};
-    \draw[->, rotate=45] (1.1,0.5) -- (1.4,0.5) node[right]{$\sigma_X$};
-    \draw[->, rotate=45] (0.5,1.1) -- (0.5,1.4) node[above]{$\sigma_Y$};
-    \draw[->, rotate=45] (0.5,-0.1) -- (0.5,-0.4) node[below]{$\sigma_Y$};
-
-    \draw[{Straight Barb[left]}-, rotate=45] (0.0,-0.05) -- (1.0,-0.05) node[pos=0.0, below]{$\tau_{XY}$};
-    \draw[-{Straight Barb[left]}, rotate=45] (0.0,1.05) -- (1.0,1.05) node[pos=1.0, above]{$\tau_{XY}$};
-
-    \draw[{Straight Barb[right]}-, rotate=45] (-0.05,0.0) -- (-0.05,1.0) node[pos=0.0, left]{$\tau_{XY}$};
-    \draw[-{Straight Barb[right]}, rotate=45] (1.05,0.0) -- (1.05,1.0) node[pos=1.0, right]{$\tau_{XY}$};
-
-  \end{tikzpicture}
-  \caption{Mohr's circle rotated by \(\phi\)}
-  \label{fig-rotated-mohrs-circle}
+    \centering
+    \includestandalone[width=0.8\textwidth, mode=buildnew]{04_failure_modes/mohrs-circle-rotated}
+    \caption{Mohr's circle rotated by \(\phi\)}
+    \label{fig-rotated-mohrs-circle}
 \end{marginfigure}
 
 The two sets of stresses are related by formulae involving the sine and cosine of twice the angle, 2\(\phi\). Mohr's circle is a graphical way of representing these formulae. The construction of the circle is as follows and is shown in \cref{fig-m-circle}.
 
 \begin{enumerate}
-  \item Draw the line AB between points with coordinates: \(\text{A} = (\sigma_x, -\tau_{xy}) \) and \(\text{B} = (\sigma_y, \tau_{xy}) \)
-  \item Draw the circle with AB as diameter
+    \item Draw the line AB between points with coordinates: \(\text{A} = (\sigma_x, -\tau_{xy}) \) and \(\text{B} = (\sigma_y, \tau_{xy}) \)
+    \item Draw the circle with AB as diameter
 \end{enumerate}
 
-
-
 \begin{figure}[h!]
-  \center{}
-  \begin{tikzpicture}[scale=0.75]
-
-    \draw[] (-1,-5) -- (-1,5) node[pos=1.0, anchor=east] {$\tau_n$};
-    \draw[] (-1,0) -- (12,0) node[pos=1.0, anchor=north] {$\sigma_n$};
-  
-    \draw[] (6,0) circle (4);
-  
-    \draw[] (2,0) -- (10,0)
-    node[pos=0.0, anchor=south east] {$Q=(\sigma_2,0)$}
-    node[pos=1.0, anchor=south west] {$P=(\sigma_1,0)$};
-  
-    \draw[] (6,-4) -- (6,4)
-    node[pos=0.0, anchor=north] {$S=(0,-\tau_{\max} )$}
-    node[pos=1.0, anchor=south] {$R=(0,\tau_{\max} )$};
-  
-    \draw[rotate around={25:(6,0)}] (2,0) -- (10,0) 
-    node[pos=0.0, anchor=north east] {$D=(\sigma_y,\tau_{YX})$}
-    node[pos=1.0, anchor=south west] {$C=(\sigma_x,-\tau_{XY})$};
-  
-    \draw[rotate around={-40:(6,0)}] (2,0) -- (10,0) 
-    node[pos=0.0, anchor=south east] {$B=(\sigma_y,\tau_{yx})$}
-    node[pos=1.0, anchor=north west] {$A=(\sigma_x,-\tau_{xy})$};
-  
-    \draw[] (7,0) arc (0:25:1);
-    \draw[] (7,0) arc (0:-40:1) node[pos=0.2, anchor=north west] {$2\phi$};
-  
-  \end{tikzpicture}
-  \caption{Mohr's circle relating stresses associated with elements with different orientations}
-  \label{fig-m-circle}
+    \includestandalone[width=\textwidth, mode=buildnew]{04_failure_modes/m-circle}
+    \caption{Mohr's circle relating stresses associated with elements with different orientations}
+    \label{fig-m-circle}
 \end{figure}
 
 Then, to find the stresses related to the element rotated through angle \(\phi\), the diameter AB is rotated through angle \(2\phi\), giving diameter CD. The positions of C and D give the other stress with: \(\text{C} = (\sigma_X, -\tau_{XY}) \) and \(\text{D} = (\sigma_Y, \tau_{XY}) \).
@@ -151,18 +90,18 @@ Then, to find the stresses related to the element rotated through angle \(\phi\)
 Mohr's\marginnote{Principal Stresses} circle shows there are two special cases. The first is when the diameter AB is rotated so that it becomes horizontal. The corresponding element undergoes no shear stress, but is subject to two direct stresses (in perpendicular directions) which are \(\sigma_1\) and \(\sigma_2\). These are the principal direct stress and represent the maximum and minimum values of direct stress in any direction.
 
 \begin{equation}
-  \sigma_1 = \frac{1}{2}(\sigma_x+\sigma_y) + \sqrt{\left(\frac{1}{4}(\sigma_x-\sigma_y)^2\right)+\tau_{xy}^2}
+    \sigma_1 = \frac{1}{2}(\sigma_x+\sigma_y) + \sqrt{\left(\frac{1}{4}(\sigma_x-\sigma_y)^2\right)+\tau_{xy}^2}
 \end{equation}
 
 \begin{equation}
-  \sigma_2 = \frac{1}{2}(\sigma_x+\sigma_y) - \sqrt{\left(\frac{1}{4}(\sigma_x-\sigma_y)^2\right)+\tau_{xy}^2}
+    \sigma_2 = \frac{1}{2}(\sigma_x+\sigma_y) - \sqrt{\left(\frac{1}{4}(\sigma_x-\sigma_y)^2\right)+\tau_{xy}^2}
 \end{equation}
 
 The\marginnote{Principal Shear Stresses} second special case is when the diameter AB is rotated so that it becomes vertical in circle. The corresponding element sees the same direct stresses (in the two perpendicular directions) and a shear stress. From \cref{fig-m-circle}, this common direct stress is the average of the principal stresses \(\frac{1}{2}(\sigma_1+\sigma_2)\). The shear stress is the largest possible shear stress in any direction, denoted (on \cref{fig-m-circle}) by \(\tau_{\max}\).
 
 \begin{equation}
-  \tau_{\max} = \sqrt{\left(\frac{1}{4}(\sigma_x-\sigma_y)^2\right)+\tau_{xy}^2}
-  \label{equ:tau-max}
+    \tau_{\max} = \sqrt{\left(\frac{1}{4}(\sigma_x-\sigma_y)^2\right)+\tau_{xy}^2}
+    \label{equ:tau-max}
 \end{equation}
 
 In designing a component, there are limiting values placed on the direct and shear stresses (associated with any elements or directions). These may be based upon the yield tensile stress and the yield shear stress, or upon the ultimate tensile stress and ultimate shear stress.
@@ -170,11 +109,11 @@ In designing a component, there are limiting values placed on the direct and she
 So there are two conditions to satisfy as follows.
 
 \begin{equation}
-|\sigma_1|,|\sigma_2| \leq \text{max\ allowable\ direct\ stress}
+    |\sigma_1|,|\sigma_2| \leq \text{max\ allowable\ direct\ stress}
 \end{equation}
 
 \begin{equation}
-|\tau_{\max}| \leq \text{max\ allowable\ shear\ stress}
+    |\tau_{\max}| \leq \text{max\ allowable\ shear\ stress}
 \end{equation}
 
 The\marginnote{Assumptions for Shafts} first assumption is that only stresses on the outside of the shaft need be considered. This is where the axial direct stress and the shear stress are maximal.
@@ -184,19 +123,19 @@ The second assumption is that only the condition related to the maximum shear st
 The third assumption is that the \acf{UTS} and the \acf{USS} for steel and roughly related by the relation:
 
 \begin{equation}
-  \text{USS steel} \simeq 0.75 \times \text{UTS steel}
+    \text{USS steel} \simeq 0.75 \times \text{UTS steel}
 \end{equation}
 
 An alternative third assumption is that the \acf{TYS} and the \acf{SYS} for steel are roughly related by the relation:
 
 \begin{equation}
-  \text{SYS steel} \simeq 0.58 \times \text{TYS steel}
+    \text{SYS steel} \simeq 0.58 \times \text{TYS steel}
 \end{equation}
 
-These are empirical relations based upon typical values for steel as shown in \cref{tbl-uts-relationships} by~\citet{deutschman1975}~\cite{deutschman1975}.
+These are empirical relations based upon typical values for steel as shown in \cref{tbl-uts-relationships} by \mycite{deutschman1975}.
 
 \begin{table}
-  \caption[Approximate relationships between shear and tensile stresses]{Approximate relationships between shear and tensile stresses~\citep{deutschman1975}}
+  \caption[Approximate relationships between shear and tensile stresses]{Approximate relationships between shear and tensile stresses \cite{deutschman1975}}
   \label{tbl-uts-relationships}
   \center{}
   \small
@@ -216,7 +155,7 @@ These are empirical relations based upon typical values for steel as shown in \c
 
 \section{Failure Criteria}
 
-The\marginnote{Note: to deal with these theories properly requires considering the stress in the third dimension, which we have been ignoring as it is zero for the cases considered here. While the failure criteria are completely general, to keep things simple the equations in this section are not necessarily valid for other general stress states.} yield strength of materials is measured experimentally, often using uniaxial tests. In this type of test, a sample is progressively loaded in tension, and its extension recorded, until it starts to deform plastically. The stress at this point is called the yield strength of the material. However, the combined stress state described above is more complicated than in a uniaxial test. It is not feasible to experimentally test for every combination of stresses that a material might encounter, so some theory is needed to relate the combined stress state described above to the uniaxial yield strength of the material. There are multiple theories available to explain this relationship, known as failure criteria. Here we will discuss the two simplest, the Tresca criteria and the von Mises stress.
+The\marginnote{Note: To deal with these theories properly requires considering the stress in the third dimension, which we have been ignoring as it is zero for the cases considered here. While the failure criteria are completely general, to keep things simple the equations in this section are not necessarily valid for other general stress states.} yield strength of materials is measured experimentally, often using uniaxial tests. In this type of test, a sample is progressively loaded in tension, and its extension recorded, until it starts to deform plastically. The stress at this point is called the yield strength of the material. However, the combined stress state described above is more complicated than in a uniaxial test. It is not feasible to experimentally test for every combination of stresses that a material might encounter, so some theory is needed to relate the combined stress state described above to the uniaxial yield strength of the material. There are multiple theories available to explain this relationship, known as failure criteria. Here we will discuss the two simplest, the Tresca criteria and the von Mises stress.
 
 The Tresca criterion is based on the maximum shear stress, and predicts that failure will occur when the maximum shear stress reaches some critical value:
 

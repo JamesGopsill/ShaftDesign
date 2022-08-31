@@ -90,7 +90,7 @@ The factor d provide for these conditions, The value taken for d will be depende
 A safety factor may be defined by a Code of Practice, Company Policy, experience of designer. Codes of Practice specifying Safety Factors are often associated with specialised industries for products such as boilers, buildings etc. Companies dealing with specialised products frequently have their own specified factors of safety. Caution should be exercised where the design differs from the ``norm''. Experienced designers will often have developed their own safety factors for application to their design speciality.
 
 
-In\marginnote{Calculating d using Pugsley's Method} 1966, Pugsley~\cite{howard1967} devised a general methodology for determining the safety factor, which takes the manufacturing, operational characteristics, and seriousness of failure into account\footnote{For more information on Safety Factors please see \cref{appendix-safety}}.
+In\marginnote{Calculating d using Pugsley's Method} 1966, Pugsley \mycite{howard1967} devised a general methodology for determining the safety factor, which takes the manufacturing, operational characteristics, and seriousness of failure into account\footnote{For more information on Safety Factors please see \cref{appendix-safety}}.
 
 \begin{equation}
     d = X.Y
@@ -170,15 +170,17 @@ This\marginnote{k: Stress Concentration Factor} allows for the fact that there m
 
 \begin{figure*}[t!]
   
-    \hfill
-    \subfloat[Shaft under bending]{
-        \includegraphics[width=0.45\textwidth]{05_design_factor/fillet-bending.png}
+    \hfill{}
+    \subfloat[Bending]{
+        \includestandalone[width=0.45\textwidth]{05_design_factor/fillet-bending}
+        %\includegraphics[width=0.45\textwidth]{05_design_factor/fillet-bending.png}
     }
-    \hfill
-    \subfloat[Shaft under torsion]{
-        \includegraphics[width=0.45\textwidth]{05_design_factor/fillet-torsion.png}
+    \hfill{}
+    \subfloat[Torsion]{
+        \includestandalone[width=0.45\textwidth]{05_design_factor/fillet-torsion}
+        % \includegraphics[width=0.45\textwidth]{05_design_factor/fillet-torsion.png}
     }
-    \hfill
+    \hfill{}
     
     \vspace{1em}
     \caption{Fillet stress concentration factors for shafts}\label{fig-stress-fillet}
@@ -186,15 +188,17 @@ This\marginnote{k: Stress Concentration Factor} allows for the fact that there m
 
 \begin{figure*}[t]
     
-    \hfill
-    \subfloat[Shaft under bending]{
-        \includegraphics[width=0.45\textwidth]{05_design_factor/circlip-groove-bending.png}
+    \hfill{}
+    \subfloat[Bending]{
+        \includestandalone[width=0.45\textwidth]{05_design_factor/circlip-groove-bending}
+        %\includegraphics[width=0.45\textwidth]{05_design_factor/circlip-groove-bending.png}
     }
-    \hfill
-    \subfloat[Shaft under torsion]{
-        \includegraphics[width=0.45\textwidth]{05_design_factor/circlip-groove-torsion.png}
+    \hfill{}
+    \subfloat[Torsion]{
+        \includestandalone[width=0.45\textwidth]{05_design_factor/circlip-groove-torsion}
+        %\includegraphics[width=0.45\textwidth]{05_design_factor/circlip-groove-torsion.png}
     }
-    \hfill
+    \hfill{}
     
     \vspace{1em}
     \caption{Circlip stress concentration factors for shafts}\label{fig-stress-circlip}

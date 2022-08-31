@@ -41,15 +41,26 @@ From\marginnote{Shear Force Diagram} these equations, the shear force diagrams f
 
 \begin{figure*}[th!]
     
-    \hfill
+    \hfill{}
     \subfloat[Vertical Shear]{
-        \includestandalone[width=0.45\textwidth, mode=buildnew]{03_macaulay_notation/vertical_shear}
+        \includestandalone[width=0.4\textwidth, mode=buildnew]{03_macaulay_notation/vertical_shear}
     }
-    \hfill
+    \hfill{}
     \subfloat[Horizontal Shear]{
-        \includestandalone[width=0.45\textwidth, mode=buildnew]{03_macaulay_notation/horizontal_shear}
+        \includestandalone[width=0.4\textwidth, mode=buildnew]{03_macaulay_notation/horizontal_shear}
     }
-    \hfill
+    \hfill{}
+    \leavevmode\newline
+    
+    \hfill{}
+    \subfloat[Vertical Bending]{
+        \includestandalone[width=0.4\textwidth, mode=buildnew]{03_macaulay_notation/vertical_bending}
+    }
+    \hfill{}
+    \subfloat[Horizontal Bending]{
+        \includestandalone[width=0.4\textwidth, mode=buildnew]{03_macaulay_notation/horizontal_bending}
+    }
+    \hfill{}
     
     \vspace{2em}
     \caption{Shear force diagrams}
@@ -65,20 +76,5 @@ Having\marginnote{Bending Moment}  described the shear forces in Macaulay Notati
   M_h = \int S_h = F_{3}\langle x-x_0\rangle^1 + R_{h1}\langle x-x_2\rangle^1 + R_{h2}\langle x-x_4\rangle^1
 \end{equation}
 
-Using\marginnote{Bending Moment Diagram} these equations, one can obtain the bending moment diagrams for the loaded beam (\cref{fig-bmd}).
+Using\marginnote{Bending Moment Diagram} these equations, one can obtain the bending moment diagrams for the loaded beam \pref{fig-sfd}.
 
-\begin{figure*}[th!]
-
-    \hfill
-    \subfloat[Vertical Bending]{
-        \includestandalone[width=0.45\textwidth, mode=buildnew]{03_macaulay_notation/vertical_bending}
-    }
-    \hfill
-    \subfloat[Horizontal Bending]{
-        \includestandalone[width=0.45\textwidth, mode=buildnew]{03_macaulay_notation/horizontal_bending}
-    }
-    \hfill
-    
-    \vspace{2em}
-    \caption{Bending Moment Diagrams}\label{fig-bmd}
-\end{figure*}

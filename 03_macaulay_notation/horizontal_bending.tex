@@ -1,6 +1,12 @@
 \documentclass[margin=0.1cm]{standalone}
 
-\usepackage{stix2}
+%\usepackage{stix2}
+\usepackage[]{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{arevmath}
+\usepackage[italic]{mathastext}
+\usepackage[T1]{fontenc}
+
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.17}
 \usepgfplotslibrary{units}
@@ -15,7 +21,9 @@
         x unit=\si{\metre},
         y unit=\si{\kilo\newton},
         legend style={at={(0.97,0.03)},anchor=south east, font=\footnotesize},
-        legend cell align=left
+        legend cell align=left,
+        ymin={-2.1},
+        ymax={2.1}
     ]
     
     \addplot[color=black, dotted] coordinates {

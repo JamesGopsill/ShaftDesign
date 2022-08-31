@@ -1,0 +1,30 @@
+\documentclass[tikz]{standalone}
+
+%\usepackage[utopia]{mathdesign}
+\usepackage[]{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{arevmath}
+\usepackage[italic]{mathastext}
+\usepackage[T1]{fontenc}
+
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[scale=2]
+
+    \draw[] (0,0) -- (0,1) -- (1,1) -- (1,0) -- (0,0);
+    
+    
+    \draw[->] (-0.1,0.5) -- (-0.4,0.5) node[left]{$\sigma_x$};
+    \draw[->] (1.1,0.5) -- (1.4,0.5) node[right]{$\sigma_x$};
+    \draw[->] (0.5,1.1) -- (0.5,1.4) node[above]{$\sigma_y$};
+    \draw[->] (0.5,-0.1) -- (0.5,-0.4) node[below]{$\sigma_y$};
+    
+    \draw[{Straight Barb[left]}-] (0.0,-0.05) -- (1.0,-0.05) node[pos=0.0, below]{$\tau_{xy}$};
+    \draw[-{Straight Barb[left]}] (0.0,1.05) -- (1.0,1.05) node[pos=1.0, above]{$\tau_{xy}$};
+    
+    \draw[{Straight Barb[right]}-] (-0.05,0.0) -- (-0.05,1.0) node[pos=0.0, left]{$\tau_{xy}$};
+    \draw[-{Straight Barb[right]}] (1.05,0.0) -- (1.05,1.0) node[pos=1.0, right]{$\tau_{xy}$};
+
+\end{tikzpicture}
+\end{document}

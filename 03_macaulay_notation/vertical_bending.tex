@@ -1,6 +1,13 @@
 \documentclass[margin=0.1cm]{standalone}
 
-\usepackage{stix2}
+%\usepackage{stix2}
+\usepackage[]{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{arevmath}
+\usepackage[italic]{mathastext}
+\usepackage[T1]{fontenc}
+
+
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.17}
 \usepgfplotslibrary{units}
@@ -9,13 +16,15 @@
 \begin{document}
 \begin{tikzpicture}
     \begin{axis}[
-        xlabel = Shaft Length (\si{\metre}),
-        ylabel = Bending Moment (\si{\kilo\newton\metre}),
+        xlabel = Shaft Length,
+        ylabel = Bending Moment,
         use units,
         x unit=\si{\metre},
         y unit=\si{\kilo\newton},
-        legend style={at={(0.03,0.97)},anchor=north west, font=\footnotesize},
-        legend cell align=left
+        legend style={at={(0.05,0.95)},anchor=north west, font=\footnotesize},
+        legend cell align=left,
+        ymin={-2.1},
+        ymax={2.1}
     ]
     
     \addplot[color=black, dotted] coordinates {
